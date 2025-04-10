@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "15mb"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "app.py"
+      }
+    ],
+    "env": {
+      "JWT_SECRET_KEY": "@jwt_secret_key",
+      "MONGO_URI": "@mongo_uri",
+      "SMTP_SERVER": "@smtp_server",
+      "SMTP_PORT": "@smtp_port",
+      "SENDER_EMAIL": "@sender_email",
+      "SENDER_PASSWORD": "@sender_password"
+    }
+  }
+  
