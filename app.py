@@ -246,7 +246,7 @@ def set_user_api_limit():
 @jwt_required()
 def user_details():
     user_id = get_jwt_identity()
-    user = users_collection.find_one({"_id": ObjectId(user_id)}, {"password": 0})  # Exclude password for security
+    user = users_collection.find_one({"_id": ObjectId(user_id)}, {"password": 0})  # Exclude password for security work
 
     if not user:
         return jsonify({"error": "User not found"}), 404
